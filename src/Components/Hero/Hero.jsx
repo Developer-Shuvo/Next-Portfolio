@@ -1,5 +1,6 @@
 import React from "react";
 import profile from "@/assets/Hero-img/hero.png";
+import icon from "@/assets/Hero-img/facebook.png";
 import Image from "next/image";
 
 const Hero = () => {
@@ -40,8 +41,12 @@ const Hero = () => {
         </div>
 
         {/* ------Image with details------- */}
-        <div className="">
-          <div className="relative w-[80vw] max-w-[300px] aspect-square mt-4 md:mt-8">
+        <div className="flex  items-center ">
+          {/* img */}
+          <div
+            className="relative w-[80vw] 
+          max-w-[300px] aspect-square mt-4 md:mt-8"
+          >
             {/* Gradient layers */}
             <div className="absolute inset-0 rounded-full overflow-hidden">
               {/* First Layer */}
@@ -72,6 +77,54 @@ const Hero = () => {
               fill
               className="rounded-full object-contain z-10"
             />
+          </div>
+          {/* text */}
+          <div className="">
+            <p className="text-white text-lg">A Designer who</p>
+            <h1
+              className="text-3xl md:text-5xl
+             text-white leading-[65px] 
+             tracking-[1px]"
+            >
+              Judges a book <br /> by its{" "}
+              <span className="text-[#7127BA]">cover </span> ...
+            </h1>
+            {/* svg */}
+            <svg
+              className="relative left-33 -top-16"
+              xmlns="http://www.w3.org/2000/svg"
+              width="189"
+              height="61"
+              viewBox="0 0 189 61"
+              fill="none"
+            >
+              <path
+                d="M92.0103 2.29732C117.923 0.146646 141.632 1.42663 159.009 5.22283C167.701 7.12163 174.78 9.64424 179.756 12.6612C184.743 15.6853 187.523 19.1444 187.834 22.8914C188.145 26.6385 185.974 30.5093 181.553 34.3143C177.143 38.1102 170.576 41.7645 162.316 45.0702C145.802 51.6793 122.63 56.8501 96.7164 59.0008C70.8031 61.1515 47.095 59.8715 29.7175 56.0753C21.0258 54.1765 13.9464 51.6548 8.97072 48.6379C3.98326 45.6137 1.2037 42.1538 0.892707 38.4067C0.581826 34.6597 2.75303 30.7897 7.17361 26.9848C11.5839 23.1888 18.1505 19.5336 26.4104 16.2279C42.9243 9.6189 66.0971 4.448 92.0103 2.29732Z"
+                stroke="white"
+              />
+            </svg>
+            <p
+              className="text-white text-sm
+             font-light "
+            >
+              Because if the cover does not impress you what else can?
+            </p>
+          </div>
+        </div>
+
+        {/* About Me */}
+        <div className="mt-10">
+          <h1 className="text-white text-5xl prv">
+            I'm a Frontend Developer.|{" "}
+          </h1>
+
+          <p className="text-white">Currently, I'm a Frontend developer at</p>
+
+          <div className="flex items-center gap-2">
+            <div className="relative w-6 h-6">
+              <Image src={icon} alt="facebook" fill className="rounded-full " />
+            </div>
+            <span className="text-[#1877F2]">Facebook</span>
           </div>
         </div>
       </div>
