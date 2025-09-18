@@ -1,14 +1,19 @@
-import { Geist, Geist_Mono } from "next/font/google";
+// app/layout.js
+import { Poppins, Preahvihear } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Poppins with multiple weights
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
+  variable: "--font-poppins",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// Preahvihear (only weight 400 available)
+const preahvihear = Preahvihear({
+  weight: [ "400"],
   subsets: ["latin"],
+  variable: "--font-preahvihear",
 });
 
 export const metadata = {
@@ -20,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${preahvihear.variable} antialiased`}
       >
         {children}
       </body>

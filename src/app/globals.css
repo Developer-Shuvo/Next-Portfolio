@@ -1,13 +1,18 @@
 @import "tailwindcss";
 
-/* :root {
- color: white;
-} */
-
 html {
   scroll-behavior: smooth;
 }
 
-.borders{
+.borders {
   border: 1px solid red !important;
+}
+
+/* Apply Google Fonts via variables from layout.js */
+html, body {
+  font-family: var(--font-poppins), var(--font-preahvihear), sans-serif;
+}
+
+.prv {
+  font-family: var(--font-preahvihear);
 }
