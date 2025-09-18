@@ -9,10 +9,10 @@ const Navbar = () => {
 
   return (
     <div className="w-screen h-full ">
-      <div className="container mx-auto relative md:px-0 px-4 md:my-4   bg-cyan-950  rounded-xl overflow-hidden">
+      <div className="container mx-auto relative md:px-0 px-4 md:my-4     border-stone-700 border-[0.5] backdrop-blur-xl  rounded-xl overflow-hidden">
         {/* Nav */}
         <nav
-          className="group bg-cyan-950 shadow-lg w-full z-50 
+          className="group    shadow-lg w-full z-50 
              relative group-hover:fixed group-hover:top-0 group-hover:left-0"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -123,7 +123,7 @@ const Navbar = () => {
               <div
                 className="fixed inset-y-0 right-0 bg-[#000000] 
         bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] 
-        bg-[size:20px_20px]  w-52 p-6 transform transition-transform"
+        bg-[size:20px_20px]  w-52 p-6 transform transition-transform "
               >
                 <button
                   onClick={closeMenu}

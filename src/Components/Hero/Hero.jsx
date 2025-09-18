@@ -6,9 +6,9 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <div className="w-full mx-auto px-4 md:px-10">
-      <div>
+      <div className="w-2/3 prv">
         {/* Name */}
-        <div className="md:mt-32 mt-10 justify-center md:justify-start flex md:ml-55">
+        <div className="md:mt-26 mt-10 justify-center md:justify-start flex md:ml-55">
           <h2 className="text-white text-md prv relative">
             Hello! I am
             <span className="text-[#7127BA]"> Md. Nazmul Hasan Shuvo</span>
@@ -16,7 +16,7 @@ const Hero = () => {
 
           {/* Arrow Icon */}
           <svg
-            className="absolute top-25 left-50 md:top-53 md:left-62"
+            className="absolute top-24 left-50 md:top-45 md:left-62"
             xmlns="http://www.w3.org/2000/svg"
             width="122"
             height="118"
@@ -112,21 +112,39 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* About Me */}
-        <div className="mt-10">
-          <h1 className="text-white text-5xl prv">
-            I'm a Frontend Developer.|{" "}
-          </h1>
+        {/*------- About Me -------- */}
+        <div className="mt-10 px-4 tracking-[1px] prv ">
+          <h1 className="text-white text-5xl ">I'm a Frontend Developer.| </h1>
 
-          <p className="text-white">Currently, I'm a Frontend developer at</p>
+          {/* Currently working */}
+          <div className="flex items-center text-xl mt-4 ">
+            <p className="text-white flex">
+              Currently, I'm a Frontend developer at
+            </p>
 
-          <div className="flex items-center gap-2">
-            <div className="relative w-6 h-6">
-              <Image src={icon} alt="facebook" fill className="rounded-full " />
+            <div className="flex items-center tracking-[1px] gap-2 ">
+              <div className="relative w-6 h-6 ml-2">
+                <Image
+                  src={icon}
+                  alt="facebook"
+                  fill
+                  className="rounded-full "
+                />
+              </div>
+              <p className="text-white">
+                {" "}
+                <span className="text-[#1877F2]">Facebook</span>,
+              </p>
             </div>
-            <span className="text-[#1877F2]">Facebook</span>
           </div>
         </div>
+
+        {/* Details */}
+        <p className="text-white text-lg px-4 mt-12 font-light">
+          A self-taught UI/UX designer, functioning in the industry for 3+ years
+          now. I make meaningful and delightful digital products that create an
+          equilibrium between user needs and business goals.
+        </p>
       </div>
     </div>
   );
