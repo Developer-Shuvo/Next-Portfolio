@@ -1,6 +1,7 @@
 // app/layout.js
 import { Poppins, Preahvihear } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/Layout/Navbar/Navbar";
 
 // Poppins with multiple weights
 const poppins = Poppins({
@@ -11,7 +12,7 @@ const poppins = Poppins({
 
 // Preahvihear (only weight 400 available)
 const preahvihear = Preahvihear({
-  weight: [ "400"],
+  weight: ["400"],
   subsets: ["latin"],
   variable: "--font-preahvihear",
 });
@@ -25,9 +26,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${preahvihear.variable} antialiased`}
+        className={`antialiased
+        w-full absolute top-0 z-[-2] 
+        min-h-screen h-auto bg-[#11071f] `}
       >
-        {children}
+        {/* এখানে নেভবার হবে */}
+        <div className="max-w-[1700px] min-h-[100vh] mx-auto px-4 md:px-10 lg:px-20 ">
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );

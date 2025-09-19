@@ -8,14 +8,14 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <div className="w-screen h-full ">
-      <div className="container mx-auto relative md:px-0 px-4 md:my-4     border-stone-700 border-[0.5] backdrop-blur-xl  rounded-xl overflow-hidden">
+    <div className="h-full w-full mx-auto overflow-hidden">
+      <div className="container mx-auto relative mt-2  border-stone-700 border-[0.5] backdrop-blur-xl  rounded-xl overflow-hidden">
         {/* Nav */}
         <nav
           className="group    shadow-lg w-full z-50 
              relative group-hover:fixed group-hover:top-0 group-hover:left-0"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className=" mx-auto w-full px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16 ">
               {/*------------- Animate Logo ------------- */}
               <div className="flex-shrink-0">

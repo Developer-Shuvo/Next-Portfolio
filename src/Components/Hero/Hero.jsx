@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div className="w-full mx-auto px-4 md:px-10">
-      <div className="w-2/3 prv">
+    <div className="w-full mx-auto  ">
+      <div className="w-2/3 prv ">
         {/* Name */}
         <div className="md:mt-26 mt-10 justify-center md:justify-start flex md:ml-55">
           <h2 className="text-white text-md prv relative">
@@ -51,7 +51,9 @@ const Hero = () => {
             <div className="absolute inset-0 rounded-full overflow-hidden">
               {/* First Layer */}
               <div
-                className="absolute inset-10"
+                className="absolute inset-10 
+                
+                "
                 style={{
                   borderRadius: "259px",
                   background:
@@ -113,7 +115,7 @@ const Hero = () => {
         </div>
 
         {/*------- About Me -------- */}
-        <div className="mt-10 px-4 tracking-[1px] prv ">
+        <div className="mt-10  tracking-[1px] prv ">
           <h1 className="text-white text-5xl ">I'm a Frontend Developer.| </h1>
 
           {/* Currently working */}
@@ -140,7 +142,7 @@ const Hero = () => {
         </div>
 
         {/* Details */}
-        <p className="text-white text-lg px-4 mt-12 font-light">
+        <p className="text-white text-lg  mt-12 font-light">
           A self-taught UI/UX designer, functioning in the industry for 3+ years
           now. I make meaningful and delightful digital products that create an
           equilibrium between user needs and business goals.
