@@ -17,8 +17,9 @@ html, body {
   font-family: var(--font-preahvihear);
 }
 
-
-
+html {
+  scroll-behavior: smooth;
+}
 
 /* media query */
 
