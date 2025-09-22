@@ -1,22 +1,24 @@
 import React from "react";
 import profile from "@/assets/Hero-img/hero.png";
-import icon from "@/assets/Hero-img/facebook.png";
+
+import softvence from "@/assets/Hero-img/softvence.png";
 import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div className="w-full mx-auto  ">
-      <div className="w-2/3 prv ">
-        {/* Name */}
-        <div className="md:mt-26 mt-10 justify-center md:justify-start flex md:ml-55">
-          <h2 className="text-white text-md prv relative">
+    <div id="home" className="w-full mx-auto">
+      {/* -------- Hero Section -------- */}
+      <div className="flex flex-col  items-center md:items-start md:justify-start text-center md:text-left prv">
+        {/* ------- Name ------- */}
+        <div className="md:mt-26 mt-10 flex justify-center md:justify-start relative ">
+          <h2 className="text-white text-md prv relative md:ml-70">
             Hello! I am
             <span className="text-[#7127BA]"> Md. Nazmul Hasan Shuvo</span>
           </h2>
 
-          {/* Arrow Icon */}
+          {/* Arrow Icon শুধু বড় স্ক্রিনে দেখাবে */}
           <svg
-            className="absolute top-24 left-50 md:top-45 md:left-62"
+            className="hidden md:block absolute  md:-top-5  md:left-42"
             xmlns="http://www.w3.org/2000/svg"
             width="122"
             height="118"
@@ -40,39 +42,27 @@ const Hero = () => {
           </svg>
         </div>
 
-        {/* ------Image with details------- */}
-        <div className="flex  items-center ">
-          {/* img */}
-          <div
-            className="relative w-[80vw] 
-          max-w-[300px] aspect-square mt-4 md:mt-8"
-          >
-            {/* Gradient layers */}
+        <div className="md:flex items-center gap-4">
+          {/* ------- Image ------- */}
+          <div className="relative w-[80vw] max-w-[300px] aspect-square mt-6 md:mt-8 mx-auto md:mx-0 order-2">
             <div className="absolute inset-0 rounded-full overflow-hidden">
-              {/* First Layer */}
               <div
-                className="absolute inset-10 
-                
-                "
+                className="absolute inset-10"
                 style={{
                   borderRadius: "259px",
                   background:
                     "radial-gradient(50% 50% at 50% 50%, #FFF 17.71%, rgba(67, 67, 67, 0.00) 100%)",
                 }}
               ></div>
-
-              {/* Second Layer */}
               <div
                 className="absolute inset-0"
                 style={{
                   borderRadius: "431px",
                   background:
-                    "radial-gradient(50% 50% at 50% 50%, #763CAC 0%, rgba(50, 15, 133, 0.00) 100%",
+                    "radial-gradient(50% 50% at 50% 50%, #763CAC 0%, rgba(50, 15, 133, 0.00) 100%)",
                 }}
               ></div>
             </div>
-
-            {/* Profile Image */}
             <Image
               src={profile}
               alt="Shuvo"
@@ -80,23 +70,20 @@ const Hero = () => {
               className="rounded-full object-contain z-10"
             />
           </div>
-          {/* text */}
-          <div className="">
+
+          {/* ------- Text ------- */}
+          <div className="mt-6 md:mt-0 order-3">
             <p className="text-white text-lg">A Designer who</p>
-            <h1
-              className="text-3xl md:text-5xl
-             text-white leading-[65px] 
-             tracking-[1px]"
-            >
+            <h1 className="text-3xl md:text-5xl text-white leading-[45px] md:leading-[65px] tracking-[1px]">
               Judges a book <br /> by its{" "}
               <span className="text-[#7127BA]">cover </span> ...
             </h1>
-            {/* svg */}
+
+            {/* underline svg */}
             <svg
-              className="relative left-33 -top-16"
+              className="relative mx-auto md:mx-0 md:left-33 left-10 -top-11 md:-top-16 
+             h-[42] w-[200px] md:h-[60]"
               xmlns="http://www.w3.org/2000/svg"
-              width="189"
-              height="61"
               viewBox="0 0 189 61"
               fill="none"
             >
@@ -105,47 +92,49 @@ const Hero = () => {
                 stroke="white"
               />
             </svg>
-            <p
-              className="text-white text-sm
-             font-light "
-            >
+
+            <p className="text-white text-sm font-light">
               Because if the cover does not impress you what else can?
             </p>
           </div>
         </div>
+      </div>
 
-        {/*------- About Me -------- */}
-        <div className="mt-10  tracking-[1px] prv ">
-          <h1 className="text-white text-5xl ">I'm a Frontend Developer.| </h1>
+      {/* -------- About Me -------- */}
+      <div className="mt-10 tracking-[1px] prv text-center md:text-left">
+        <h1 className="text-white text-5xl">I'm a Frontend Developer.|</h1>
 
-          {/* Currently working */}
-          <div className="flex items-center text-xl mt-4 ">
-            <p className="text-white flex">
-              Currently, I'm a Frontend developer at
-            </p>
+        {/* Currently working */}
+        <div className="flex flex-col md:flex-row items-center justify-center md:justify-start text-xl mt-4 gap-2">
+          <p className="text-white">Currently, I'm a Frontend developer at</p>
 
-            <div className="flex items-center tracking-[1px] gap-2 ">
-              <div className="relative w-6 h-6 ml-2">
-                <Image
-                  src={icon}
-                  alt="facebook"
-                  fill
-                  className="rounded-full "
-                />
-              </div>
-              <p className="text-white">
-                {" "}
-                <span className="text-[#1877F2]">Facebook</span>,
-              </p>
+          <div className="flex items-center tracking-[1px] gap-2">
+            <div className="relative w-6 h-6">
+              <Image
+                src={softvence}
+                alt="softvence"
+                fill
+                className="rounded-full"
+              />
             </div>
+            <p className="text-white">
+              <span className="text-[#1877F2] ease-in-out duration-300 hover:text-green-500">
+                <a target="_blank" href="https://softvence.agency/">
+                  Softvence
+                </a>
+              </span>
+              .
+            </p>
           </div>
         </div>
+      </div>
 
-        {/* Details */}
-        <p className="text-stone-300 text-lg  mt-12 font-light">
+      {/* -------- Details -------- */}
+      <div className="flex items-center justify-center md:justify-start">
+        <p className="text-stone-300 text-lg mt-12 font-light text-center md:text-left">
           A self-taught UI/UX designer, functioning in the industry for 3+ years
-          now. I make meaningful and delightful digital products that create an
-          equilibrium between user needs and business goals.
+          now. <br /> I make meaningful and delightful digital products that
+          create an equilibrium <br /> between user needs and business goals.
         </p>
       </div>
     </div>

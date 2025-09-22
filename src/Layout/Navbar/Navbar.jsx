@@ -9,11 +9,12 @@ const Navbar = () => {
 
   return (
     <div className="h-full w-full mx-auto overflow-hidden">
-      <div className="container mx-auto relative mt-2 rounded-xl overflow-hidden">
+      <div className="container mx-auto relative mt-2 rounded-xl overflow-hidden  ">
         {/* Nav */}
         <nav
-          className="group shadow-lg w-full z-50 relative 
-          bg-white/10 dark:bg-black/30 backdrop-blur-xl border border-white/20 rounded-xl"
+          className="group shadow-lg fixed mx-auto w-full left-0  z-50 
+          bg-white/10 dark:bg-black/30 backdrop-blur-xl 
+          border border-white/20 rounded-xl"
         >
           <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16 ">
@@ -43,14 +44,14 @@ const Navbar = () => {
 
               {/*------------ Desktop Menu --------- */}
               <div className="hidden md:flex space-x-8 text-stone-300">
-                <a href="#about" className="text-green-400 dark:text-green-600">
+                <a href="#home" className="text-green-400 dark:text-green-600">
                   Home
                 </a>
                 <a
-                  href="#what-i-do"
+                  href="#experience"
                   className="hover:text-green-400 dark:hover:text-green-600"
                 >
-                  What I Do
+                  Experience
                 </a>
                 <a
                   href="#testimonials"
@@ -105,11 +106,7 @@ const Navbar = () => {
           onClick={(e) => e.target === e.currentTarget && closeMenu()}
           className="fixed inset-0 bg-black/50 z-50"
         >
-          <div
-            className="fixed inset-y-0 right-0 bg-[#000000]/90 
-            bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] 
-            bg-[size:20px_20px] w-64 p-6 transform transition-transform"
-          >
+          <div className="fixed inset-y-0 right-0 backdrop-blur-xl w-54 p-8 transform transition-transform">
             <button
               onClick={closeMenu}
               className="text-green-400 dark:text-green-600 hover:text-green-600 focus:outline-none mb-4"
@@ -131,16 +128,16 @@ const Navbar = () => {
             </button>
             <nav className="space-y-4 text-stone-300">
               <a
-                href="#about"
+                href="#home"
                 className="block text-green-400 dark:text-green-600"
               >
                 Home
               </a>
               <a
-                href="#what-i-do"
+                href="#experience"
                 className="block hover:text-green-400 dark:hover:text-green-600"
               >
-                What I Do
+                Experience
               </a>
               <a
                 href="#testimonials"

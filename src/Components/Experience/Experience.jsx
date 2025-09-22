@@ -1,43 +1,49 @@
-// components/Experience.jsx
 import Image from "next/image";
+import icon1 from "@/assets/Experience-img/star (2).png";
+import icon2 from "@/assets/Experience-img/cup.png";
+import icon3 from "@/assets/Experience-img/drop.png";
+import icon4 from "@/assets/Experience-img/light.png";
 
 const cards = [
   {
     id: 1,
     title: "CIB on the Mobile",
     desc: "Take your client onboard seamlessly by our amazing tool of digital onboard process.",
-    img: "/icons/icon1.png", // replace with your actual icons
+    img: icon1, // replace with your actual icons
   },
   {
     id: 2,
     title: "CIB on the Mobile",
     desc: "Take your client onboard seamlessly by our amazing tool of digital onboard process.",
-    img: "/icons/icon2.png",
+    img: icon2,
   },
   {
     id: 3,
     title: "CIB on the Mobile",
     desc: "Take your client onboard seamlessly by our amazing tool of digital onboard process.",
-    img: "/icons/icon3.png",
+    img: icon3,
   },
   {
     id: 4,
     title: "CIB on the Mobile",
     desc: "Take your client onboard seamlessly by our amazing tool of digital onboard process.",
-    img: "/icons/icon4.png",
+    img: icon4,
   },
 ];
 
 const Experience = () => {
   return (
-    <section className="w-full py-10">
+    <section id="experience" className="w-full py-10">
+      <h1 className="text-3xl md:text-5xl flex text-center justify-center md:justify-start text-white font-normal mt-10 mb-6 md:mt-[170px] md:mb-[40px] prv">
+        Experience
+      </h1>
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 px-4 md:px-0">
         {cards.map((card) => (
           <div
             key={card.id}
-            className="relative p-6 rounded-2xl shadow-lg text-white
+            className="relative p-4 rounded-2xl shadow-lg text-white
               bg-gradient-to-br from-[#130428] via-[#251043] via-[#38126D] via-[#261045] to-[#190634]
-              overflow-hidden"
+              overflow-hidden border-[#4F228D] border-t-4"
           >
             {/* Radial background effect */}
             <div
@@ -49,19 +55,32 @@ const Experience = () => {
             ></div>
 
             {/* Card content */}
-            <div className="relative z-10 flex flex-col items-start space-y-4">
-              <Image
-                src={card.img}
-                alt={card.title}
-                width={60}
-                height={60}
-                className="object-contain"
-              />
-              <h3 className="text-xl font-semibold">{card.title}</h3>
-              <p className="text-sm text-gray-300">{card.desc}</p>
-              <button className="px-5 py-2 rounded-full border border-white/50 hover:bg-white hover:text-black transition">
-                Learn More
-              </button>
+            <div className="relative z-10 flex py-6 gap-8 items-start space-y-4  ">
+              <div>
+                <Image
+                  src={card.img}
+                  alt={card.title}
+                  width={115}
+                  height={115}
+                  className="object-contain flex items-center justify-center"
+                />
+              </div>
+
+              <div className="">
+                <h3 className="text-2xl font-semibold">{card.title}</h3>
+                <p className="text-xs text-gray-300">{card.desc}</p>
+                <button
+                  className="mt-3 px-5 py-2 rounded-xl 
+             bg-[#2C1250] border border-[#693B93] 
+             text-white font-medium
+             transition-all duration-300 ease-in-out
+             hover:bg-white/5 hover:text-white 
+             hover:backdrop-blur-md hover:shadow-[0_0_15px_rgba(105,59,147,0.7)] 
+             hover:border-[#a678d2]"
+                >
+                  Learn More
+                </button>
+              </div>
             </div>
           </div>
         ))}
