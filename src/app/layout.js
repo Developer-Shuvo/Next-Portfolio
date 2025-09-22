@@ -24,14 +24,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable} ${preahvihear.variable}`}>
       <body
         className={`antialiased
         w-full absolute top-0 z-[-2] 
-        min-h-screen h-auto bg-[#11071f] `}
+        min-h-screen h-auto bg-[#11071f]`}
       >
-        {/* এখানে নেভবার হবে */}
-        <div className="max-w-[1700px] min-h-[100vh] mx-auto px-4 md:px-10 lg:px-20 ">
+        <div className="max-w-[1920px] min-h-[100vh] mx-auto px-4 md:px-[80px] lg:px-[120px] xl:px-[200px]">
           <Navbar />
           {children}
         </div>

@@ -142,7 +142,7 @@ const Hero = () => {
         </div>
 
         {/* Details */}
-        <p className="text-white text-lg  mt-12 font-light">
+        <p className="text-stone-300 text-lg  mt-12 font-light">
           A self-taught UI/UX designer, functioning in the industry for 3+ years
           now. I make meaningful and delightful digital products that create an
           equilibrium between user needs and business goals.
