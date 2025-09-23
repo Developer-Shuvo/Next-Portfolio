@@ -37,13 +37,13 @@ const reviews = [
     name: "Jenny",
     username: "@jenny",
     body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
+    img: "https://i.postimg.cc/QNvJq9tF/grandfather.png",
   },
   {
     name: "James",
     username: "@james",
     body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
+    img: "https://i.postimg.cc/XYkK3sg5/young-man.png",
   },
 ];
 
@@ -55,11 +55,10 @@ const ReviewCard = ({ img, name, username, body }) => {
     <figure
       className={cn(
         "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        "border-stone-500 bg- hover:bg-gray-950/[.05]",
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15] "
+        "border-stone-500 backdrop-blur-xl bg-blue-"
       )}
     >
-      <div className="flex flex-row items-center gap-2">
+      <div className="flex flex-row items-center gap-2 ">
         <img
           height={32}
           width={32}
@@ -76,14 +75,14 @@ const ReviewCard = ({ img, name, username, body }) => {
           <p className="text-xs font-medium text-stone-400">{username}</p>
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      <blockquote className="mt-2 text-sm text-stone-200">{body}</blockquote>
     </figure>
   );
 };
 
 export function MarqueeDemo() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden  mt-20 md:mt-42">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden  mt-20 md:mt-42 ">
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.username} {...review} />

@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
         w-full absolute top-0 z-[-2] 
         min-h-screen h-auto bg-[#11071f]`}
       >
-        <div className="max-w-[1920px] min-h-[100vh] mx-auto px-4 md:px-[40px] lg:px-[120px] xl:px-[200px]">
+        <div className="">
           <Navbar />
           {children}
         </div>
