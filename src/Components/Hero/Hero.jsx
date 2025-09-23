@@ -10,8 +10,8 @@ const Hero = () => {
       {/* -------- Hero Section -------- */}
       <div className="flex flex-col  items-center md:items-start md:justify-start text-center md:text-left prv">
         {/* ------- Name ------- */}
-        <div className="md:mt-26 mt-10 flex justify-center md:justify-start relative ">
-          <h2 className="text-white text-md prv relative md:ml-70">
+        <div className="md:mt-42 mt-10 flex justify-center md:justify-start relative ">
+          <h2 className="text-white text-md prv mt-14 md:mt-0 relative md:ml-70">
             Hello! I am
             <span className="text-[#7127BA]"> Md. Nazmul Hasan Shuvo</span>
           </h2>
@@ -130,11 +130,13 @@ const Hero = () => {
       </div>
 
       {/* -------- Details -------- */}
-      <div className="flex items-center justify-center md:justify-start">
+      <div className="flex items-center justify-center md:justify-start px-2 md:px-0">
         <p className="text-stone-300 text-lg mt-12 font-light text-center md:text-left">
-          A self-taught UI/UX designer, functioning in the industry for 3+ years
-          now. <br /> I make meaningful and delightful digital products that
-          create an equilibrium <br /> between user needs and business goals.
+          A self-taught Frontend Developer with hands-on experience in crafting
+          modern, <br /> responsive, and user-focused web applications. I specialize in
+          translating ideas <br /> into seamless digital experiences that balance
+          performance, accessibility, <br /> and aesthetics—bridging the gap between
+          design vision and business impact.
         </p>
       </div>
     </div>

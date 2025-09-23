@@ -1,24 +1,31 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openMenu = () => setIsOpen(true);
+  const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
+
+  // ✅ Close menu on scroll
+  useEffect(() => {
+    const handleScroll = () => setIsOpen(false);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="h-full w-full mx-auto overflow-hidden">
-      <div className="container mx-auto relative mt-2 rounded-xl overflow-hidden  ">
+      <div className="container mx-auto relative mt-2 rounded-xl overflow-hidden">
         {/* Nav */}
         <nav
-          className="group shadow-lg fixed mx-auto w-full left-0  z-50 
+          className="group shadow-lg fixed mx-auto w-full left-0 z-50 
           bg-white/10 dark:bg-black/30 backdrop-blur-xl 
           border border-white/20 rounded-xl"
         >
+          {/*------------- Animate Logo ------------- */}
           <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16 ">
-              {/*------------- Animate Logo ------------- */}
               <div className="flex-shrink-0">
                 <a
                   href="#"
@@ -76,23 +83,25 @@ const Navbar = () => {
               {/*------------- Mobile Menu Button ---------- */}
               <div className="md:hidden flex items-center">
                 <button
-                  onClick={openMenu}
-                  className="text-green-400 dark:text-green-600 hover:text-green-600 focus:outline-none"
+                  onClick={toggleMenu}
+                  className="relative w-8 h-4 flex flex-col justify-between items-center"
                 >
-                  <svg
-                    className="w-6 h-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M4 6h16M4 12h16m-7 6h7"
-                    />
-                  </svg>
+                  {/* Hamburger → X animation */}
+                  <span
+                    className={`block h-0.5 w-6 bg-green-400 dark:bg-green-600 transform transition duration-300 ${
+                      isOpen ? "rotate-45 translate-y-2" : ""
+                    }`}
+                  />
+                  <span
+                    className={`block h-0.5 w-6 bg-green-400 dark:bg-green-600 transition duration-300 ${
+                      isOpen ? "opacity-0" : "opacity-100"
+                    }`}
+                  />
+                  <span
+                    className={`block h-0.5 w-6 bg-green-400 dark:bg-green-600 transform transition duration-300 ${
+                      isOpen ? "-rotate-45 -translate-y-2" : ""
+                    }`}
+                  />
                 </button>
               </div>
             </div>
@@ -100,67 +109,58 @@ const Navbar = () => {
         </nav>
       </div>
 
-      {/* Mobile Menu Overlay (Full Screen) */}
-      {isOpen && (
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
+          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={(e) => e.target === e.currentTarget && closeMenu()}
+      >
+        {/* Mobile Menu bar */}
         <div
-          onClick={(e) => e.target === e.currentTarget && closeMenu()}
-          className="fixed inset-0 bg-black/50 z-50"
+          className={`fixed inset-y-0 right-0 backdrop-blur-xl w-64 p-8 pt-24 transform transition-transform duration-300 ${
+            isOpen ? "translate-x-0" : "translate-x-full "
+          }`}
         >
-          <div className="fixed inset-y-0 right-0 backdrop-blur-xl w-54 p-8 transform transition-transform">
-            <button
+          <nav className="space-y-4 text-stone-300">
+            <a
+              href="#home"
               onClick={closeMenu}
-              className="text-green-400 dark:text-green-600 hover:text-green-600 focus:outline-none mb-4"
+              className="block text-green-400 dark:text-green-600"
             >
-              <svg
-                className="w-6 h-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-            <nav className="space-y-4 text-stone-300">
-              <a
-                href="#home"
-                className="block text-green-400 dark:text-green-600"
-              >
-                Home
-              </a>
-              <a
-                href="#experience"
-                className="block hover:text-green-400 dark:hover:text-green-600"
-              >
-                Experience
-              </a>
-              <a
-                href="#testimonials"
-                className="block hover:text-green-400 dark:hover:text-green-600"
-              >
-                Testimonials
-              </a>
-              <a
-                href="#clients"
-                className="block hover:text-green-400 dark:hover:text-green-600"
-              >
-                Clients
-              </a>
-              <a
-                href="#fun-facts"
-                className="block hover:text-green-400 dark:hover:text-green-600"
-              >
-                Fun Facts
-              </a>
-            </nav>
-          </div>
+              Home
+            </a>
+            <a
+              href="#experience"
+              onClick={closeMenu}
+              className="block hover:text-green-400 dark:hover:text-green-600"
+            >
+              Experience
+            </a>
+            <a
+              href="#testimonials"
+              onClick={closeMenu}
+              className="block hover:text-green-400 dark:hover:text-green-600"
+            >
+              Testimonials
+            </a>
+            <a
+              href="#clients"
+              onClick={closeMenu}
+              className="block hover:text-green-400 dark:hover:text-green-600"
+            >
+              Clients
+            </a>
+            <a
+              href="#fun-facts"
+              onClick={closeMenu}
+              className="block hover:text-green-400 dark:hover:text-green-600"
+            >
+              Fun Facts
+            </a>
+          </nav>
         </div>
-      )}
+      </div>
     </div>
   );
 };
