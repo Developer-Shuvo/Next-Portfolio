@@ -52,31 +52,40 @@ const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({ img, name, username, body }) => {
   return (
-    <figure
-      className={cn(
-        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        "border-stone-500 backdrop-blur-xl bg-blue-"
-      )}
-    >
-      <div className="flex flex-row items-center gap-2 ">
-        <img
-          height={32}
-          width={32}
-          className="rounded-full"
-          h="32"
-          w="32"
-          alt=""
-          src={img}
-        />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium text-stone-400">{username}</p>
-        </div>
-      </div>
-      <blockquote className="mt-2 text-sm text-stone-200">{body}</blockquote>
-    </figure>
+<figure
+  className={cn(
+    "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+    "border-white/20 backdrop-blur-md bg-gradient-to-br from-[#969696ca] via-[#e1dbdbc0] via-[rgb(55,71,79)] via-[#455A64] to-[#a0f0e1d9]"
+  )}
+>
+  {/* Subtle Radial Glow Overlay */}
+  <div
+    className="absolute inset-0 rounded-xl pointer-events-none"
+    style={{
+      background: "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0) 70%)",
+    }}
+  />
+
+  <div className="flex flex-row items-center gap-2 relative z-10">
+    <img
+      height={32}
+      width={32}
+      className="rounded-full"
+      alt=""
+      src={img}
+    />
+    <div className="flex flex-col">
+      <figcaption className="text-sm font-medium text-white">
+        {name}
+      </figcaption>
+      <p className="text-xs font-medium text-stone-400">{username}</p>
+    </div>
+  </div>
+  <blockquote className="mt-2 text-sm text-stone-200 relative z-10">
+    {body}
+  </blockquote>
+</figure>
+
   );
 };
 
