@@ -1,4 +1,6 @@
-import { IconCloud } from "@/components/ui/icon-cloud";
+"use client"; // ✅ required for Framer Motion if needed
+
+import { IconCloud } from "../ui/icon-cloud"; // ✅ relative path to avoid alias issue
 
 const slugs = [
   "typescript",
@@ -39,9 +41,9 @@ export function AnimationTechnology() {
   );
 
   return (
-    <div className="relative flex flex-col size-full items-center justify-center  overflow-hidden">
+    <div className="relative flex flex-col w-full  h-[450px] md:h-[450px] lg:h-[600px] items-center justify-center overflow-hidden">
       <IconCloud images={images} />
-      <h1 className="text-stone-300 prv ">Technology Meets Creativity</h1>
+          <h1 className="text-stone-300 prv ">Technology Meets Creativity</h1>
     </div>
   );
 }

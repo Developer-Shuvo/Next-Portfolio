@@ -19,9 +19,9 @@ const Navbar = () => {
       <div className="container mx-auto relative mt-2 rounded-xl overflow-hidden">
         {/* Nav */}
         <nav
-          className="group shadow-lg fixed mx-auto w-full left-0 z-50 
-          bg-white/10 dark:bg-black/30 backdrop-blur-xl 
-          border border-white/20 rounded-xl"
+          className="group shadow-lg fixed mx-auto w-full left-0  z-50 
+          bg-white/10 dark:bg-black/30 backdrop-blur-3xl 
+          border border-white/20 rounded-xl "
         >
           {/*------------- Animate Logo ------------- */}
           <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
@@ -31,19 +31,19 @@ const Navbar = () => {
                   href="#"
                   className="lg:text-xl md:text-lg text-sm font-bold text-cyan-100 capitalize"
                 >
-                  <span className="px-1 bg-lime-400 dark:bg-green-600 rounded-full animate-[ping_1.5s_linear_infinite]">
+                  <span className="px-1 bg-sky-800 dark:bg-green-600 rounded-full animate-[ping_1.5s_linear_infinite]">
                     S
                   </span>
-                  <span className="px-1 bg-green-400 dark:bg-red-600 rounded-full animate-[ping_2s_linear_infinite]">
+                  <span className="px-1 bg-red-700 dark:bg-red-600 rounded-full animate-[ping_2s_linear_infinite]">
                     H
                   </span>
-                  <span className="px-1 bg-green-400 dark:bg-yellow-400 rounded-full animate-[ping_2.1s_linear_infinite]">
+                  <span className="px-1 bg-cyan-900 dark:bg-yellow-400 rounded-full animate-[ping_2.1s_linear_infinite]">
                     U
                   </span>
-                  <span className="px-1 bg-green-400 dark:bg-sky-600 rounded-full animate-[ping_2.21s_linear_infinite]">
+                  <span className="px-1 bg-orange-600 dark:bg-sky-600 rounded-full animate-[ping_2.21s_linear_infinite]">
                     V
                   </span>
-                  <span className="px-1 bg-green-400 dark:bg-orange-500 rounded-full animate-[ping_2.3s_linear_infinite]">
+                  <span className="px-1 bg-green-600 dark:bg-orange-500 rounded-full animate-[ping_2.3s_linear_infinite]">
                     O
                   </span>
                 </a>

@@ -55,7 +55,7 @@ const ReviewCard = ({ img, name, username, body }) => {
 <figure
   className={cn(
     "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-    "border-white/20 backdrop-blur-md bg-gradient-to-br from-[#969696ca] via-[#e1dbdbc0] via-[rgb(55,71,79)] via-[#455A64] to-[#a0f0e1d9]"
+    "border-white/20 backdrop-blur-xl  "
   )}
 >
   {/* Subtle Radial Glow Overlay */}

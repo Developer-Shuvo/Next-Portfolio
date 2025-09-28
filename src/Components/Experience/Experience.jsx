@@ -62,7 +62,7 @@ const Experience = () => {
               whileHover={{ scale: 1.08 }}
               className="relative p-4 rounded-2xl shadow-lg text-white
                 bg-gradient-to-br from-[#130428] via-[#251043] via-[#38126D] via-[#261045] to-[#190634]
-                overflow-hidden border-[#4F228D] border-t-4 cursor-pointer hover:shadow-purple-500 hover:shadow-md "
+                overflow-hidden border-[#4F228D] border-t-4 cursor-pointer  "
             >
               {/* Radial background effect */}
               <div
